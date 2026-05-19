@@ -106,22 +106,50 @@ li = [1, 3, 5, 7, 9]
 # s = "i got intern at geeksforgeeks"
 # print(convertToCamelCase(s))
 
-def checkPangram(s):
-    #code here
-    lowerc_s = 'abcdefghijklmnopqrstuvwxyz'
-    upperc_s = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-    count = 0
-    mydict = {}
+# def checkPangram(s):
+#     #code here
+#     lowerc_s = 'abcdefghijklmnopqrstuvwxyz'
+#     upperc_s = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+#     count = 0
+#     mydict = {}
     
-    if len(s) <26:
-        return False
-    else:
-        for char in s:
-            if char in lowerc_s or char in upperc_s:
-                mydict[char] = mydict.get(char,0) + 1
-    if len(mydict.keys()) == 26:
-        return True
-    return False
+#     if len(s) <26:
+#         return False
+#     else:
+#         for char in s:
+#             if char in lowerc_s or char in upperc_s:
+#                 mydict[char.lower()] = mydict.get(char.lower(),0) + 1
+#     if len(mydict.keys()) == 26:
+#         return True
+#     return False
 
-s='uq  QTYnj,F,Uv ecDACL  ZgeSoW mgjzmcAg   L, TKShMs ,pQD YjxB TPJa aSFjXEA.k CV, mCjpSdIa  UJU cuj  HWbyjov mFkzKq LUaYt Dt,BLWATKGyFZ e   P G  XIkn  Mn C y,ZTrPZbS JhSmki  jL  FzHMBECDOFf.Cy , bXjBmNlqcoJM i.lL dhZv sn dJ.CHvLu ,flo , G.RyobQ vmFCfh pS TP .Tt  ,.hfhE,tA ZwEVqIWlIRyv bkrJ LQ,NL G TWcGxTbFGD EpWd .k RFYfTUX ,OMdJcOL,nnVgS .Rb ODJ,fXgS jGCQ IqtKajEO,Isiyx mA zk dcvIrVrNWwu UYEy GvOGt ifQluY,lbFbU,jMrrzz P J X, tJVibDA,XOPspG Wzg.myCLMW.SGD LAK.kBbKPvQBdthTvgobfX g GQ.q CKhdc VB  fuuBsa LXwUvMlvp.p'
-print(checkPangram(s))
+# s='uq  QTYnj,F,Uv ecDACL  ZgeSoW mgjzmcAg   L, TKShMs ,pQD YjxB TPJa aSFjXEA.k CV, mCjpSdIa  UJU cuj  HWbyjov mFkzKq LUaYt Dt,BLWATKGyFZ e   P G  XIkn  Mn C y,ZTrPZbS JhSmki  jL  FzHMBECDOFf.Cy , bXjBmNlqcoJM i.lL dhZv sn dJ.CHvLu ,flo , G.RyobQ vmFCfh pS TP .Tt  ,.hfhE,tA ZwEVqIWlIRyv bkrJ LQ,NL G TWcGxTbFGD EpWd .k RFYfTUX ,OMdJcOL,nnVgS .Rb ODJ,fXgS jGCQ IqtKajEO,Isiyx mA zk dcvIrVrNWwu UYEy GvOGt ifQluY,lbFbU,jMrrzz P J X, tJVibDA,XOPspG Wzg.myCLMW.SGD LAK.kBbKPvQBdthTvgobfX g GQ.q CKhdc VB  fuuBsa LXwUvMlvp.p'
+# print(checkPangram(s))
+
+    # def checkPangram(self,s):
+    #     if len(s) <26:
+    #         return False
+        
+    #     seen = set()
+    #     for char in s:
+    #         if char in string.ascii_letters:
+    #             seen.add(char.lower())
+    #     return len(seen) == 26
+
+
+class Solution:
+    #Function to check if a is a subset of b.
+    def isSubset(self, a, b):
+        # Your code here
+        a.sort()
+        b.sort()
+        i = 0
+        j = 0
+        cnt = 0
+        while i < len(a) and j < len(b):
+            if a[i] == b[j]:
+               j+= 1
+            i+=1
+        return j == len(b)
+    
+    
